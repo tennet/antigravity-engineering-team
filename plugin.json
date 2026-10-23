@@ -1,8 +1,10 @@
 {
   "name": "engineering-team",
   "displayName": "Engineering Team Subagents (Full Suite)",
-  "description": "Suite avanzata di sub-agenti specializzati per ingegneria del software con protocollo dialettico ad anello chiuso (Anti-Sycophancy), quality gate formali e consapevolezza bare-metal. Include: Project Orchestrator, Software Architect, Security Auditor, QA Engineer, Integration Tester, UI/UX Designer e Documentation Engineer.",
-  "version": "2.1.0",
+  "author": "Manuele Francescon",
+  "description": "Suite avanzata di sub-agenti specializzati per ingegneria del software in Antigravity AI con protocollo dialettico ad anello chiuso (Anti-Sycophancy), quality gate formali e consapevolezza dell'ambiente reale di esecuzione (macOS, Linux, Docker, VM). Include: Project Orchestrator, Software Architect, Security Auditor, QA Engineer, Integration Tester, UI/UX Designer e Documentation Engineer.",
+  "version": "2.1.1",
+  "repository": "https://github.com/tennet/antigravity-engineering-team",
   "suggestedPrompts": [
     "Coordinamento sviluppo completo e contraddittorio con project-orchestrator",
     "Audit avversariale OWASP e threat modeling con security-auditor",
