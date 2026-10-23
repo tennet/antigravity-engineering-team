@@ -28,6 +28,12 @@ A differenza dei normali assistenti multi-agente che tendono al compiacimento pa
 
 ---
 
+## 🧭 Guide & Documentazione Pratica
+- 📖 **[VADEMECUM.md](VADEMECUM.md)**: **Guida pratica in linguaggio semplice** con il prontuario delle frasi esatte da scrivere in chat per ciascun agente e i comandi quotidiani.
+- 📘 **[docs/GUIDA_TECNICA_DETTAGLIATA.md](docs/GUIDA_TECNICA_DETTAGLIATA.md)**: **Specifiche architetturali approfondite**, diagrammi di flusso dei contratti e matrice dei quality gate.
+
+---
+
 ## 👥 La Squadra dei 7 Specialisti
 
 | Agente | Ruolo | Responsabilità Chiave |
