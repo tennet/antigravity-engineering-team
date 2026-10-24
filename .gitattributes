@@ -1,0 +1,56 @@
+# ==============================================================================
+# .gitattributes - Cross-Platform Git Normalization (3 Mac + 1 PC)
+# DevOps & Infrastructure Sage (v3.0.0)
+# ==============================================================================
+
+# Default: Automatic text normalization with LF line endings in repository
+* text=auto eol=lf
+
+# Explicit POSIX / Linux / macOS Shell Scripts
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+
+# Windows Batch / Command files (Mandatory CRLF for cmd.exe parser)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# PowerShell Scripts (LF is fully supported in PS 7+ and prevents hash divergence)
+*.ps1 text eol=lf
+*.psm1 text eol=lf
+*.psd1 text eol=lf
+
+# Docker & Container configs
+Dockerfile* text eol=lf
+*.dockerfile text eol=lf
+docker-compose*.yml text eol=lf
+docker-compose*.yaml text eol=lf
+
+# Web Server & Framework configs
+*.conf text eol=lf
+*.ini text eol=lf
+*.env* text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.php text eol=lf
+*.py text eol=lf
+
+# Binary files (prevent any git conversion or corruption)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.tar.gz binary
+*.tgz binary
+*.zip binary
+*.7z binary
+*.phar binary
+*.so binary
+*.dylib binary
+*.dll binary
+*.exe binary

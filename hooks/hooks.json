@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/pre-commit-config.json",
+  "version": "3.0.0",
+  "description": "Cross-Platform Polymorphic Hook Configuration (3 Mac + 1 PC)",
+  "metadata": {
+    "supported_runtimes": ["python3", "python.exe", "py.exe", ".venv"],
+    "anti_freeze_protection": true,
+    "windows_store_bypass": true
+  },
+  "hooks": {
+    "pre-commit": {
+      "name": "Security & Architecture Linter",
+      "entry": "hooks/run_hook",
+      "dispatch": {
+        "posix": "hooks/run_hook.sh",
+        "windows": "hooks/run_hook.cmd",
+        "powershell": "pwsh -NoProfile -ExecutionPolicy Bypass -File hooks/run_hook.ps1"
+      },
+      "args": ["hooks/security_linter.py"],
+      "timeout_seconds": 10,
+      "fail_fast": true
+    },
+    "pre-push": {
+      "name": "Configuration Integrity Check",
+      "entry": "hooks/run_hook",
+      "dispatch": {
+        "posix": "hooks/run_hook.sh",
+        "windows": "hooks/run_hook.cmd",
+        "powershell": "pwsh -NoProfile -ExecutionPolicy Bypass -File hooks/run_hook.ps1"
+      },
+      "args": ["hooks/resolve_python.py", "--print-path"],
+      "timeout_seconds": 5,
+      "fail_fast": false
+    }
+  }
+}
