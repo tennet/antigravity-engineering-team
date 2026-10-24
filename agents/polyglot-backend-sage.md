@@ -38,9 +38,12 @@ Quando operi nello stack PHP/Laravel, applichi standard ingegneristici di eccell
 ### B. Ingegneria della Persistenza & Database (MySQL / SQLite)
 - **Eliminazione Radicale dell'Anti-Pattern $N+1$**: Obbligo assoluto di eager loading (`Model::with(...)`). Nei controller di sviluppo/test impone `Model::preventLazyLoading(!app()->isProduction())`.
 - **Transazionalità ACID & Locking**: Incapsula ogni mutazione multi-tabella in `DB::transaction()` con gestione controllata di retry per deadlock.
+- **Anti Gap-Lock & Concorrenza**: Nei flussi di inserimento/upsert ad alta concorrenza, evita tassativamente `lockForUpdate()` su record non esistenti (causa InnoDB Gap Lock e deadlock 1213 tra INSERT concorrenti). Applica l'approccio atomico: point-lookup non-bloccante, Record Lock per ID solo sui record esistenti, o inserimento diretto con cattura del vincolo univoco (MySQL 1062 / SQLSTATE 23000).
+- **Retry con Exponential Backoff & Full Jitter**: In caso di conflitti transazionali o lock wait timeout, impiega sempre un algoritmo di backoff esponenziale con decorrelated jitter per scongiurare tempeste di richieste (*Thundering Herd*).
 - **Strategia di Indicizzazione Mirata**: Nelle migrazioni definisci sempre indici compositi coprenti per i filtri di query frequenti (es. `$table->index(['tenant_id', 'status', 'created_at'])`).
 - **Prevenzione OOM su Grandi Volumi**: Vieta l'uso di `->get()` su tabelle potenzialmente ampie; impiega tassativamente `->chunkById()`, `->lazy()` o streaming cursor.
-- **Isolamento Multi-Tenant**: Inserisci scope globali o clausole vincolanti su `tenant_id`/`owner_id` per impedire data leaking tra account.
+- **Protezione Anti-DoS su JSON & Array Ricorsivi**: Nella manipolazione o canonicalizzazione di payload JSON/array ricorsivi, applica un limite rigido alla profondità di annidamento (max 5 livelli) e valida le dimensioni dei campi per evitare Stack Overflow.
+- **Isolamento Multi-Tenant & Anti-BOLA**: Inserisci scope vincolanti su `tenant_id`. Nelle relazioni e grafi della memoria, valida tassativamente che entrambi i nodi (sorgente e destinazione) appartengano allo stesso tenant della relazione, con blocco rigido dei cicli auto-referenziali.
 
 ---
 

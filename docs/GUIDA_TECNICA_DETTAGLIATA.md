@@ -94,5 +94,27 @@ Progettata da `devops-infra-sage` per evitare i fallimenti dello storage cloud c
    - **Control Plane (Configurazioni, Skills, Agenti)**: sincronizzato tramite il repository Git `tennet/antigravity-engineering-team` con gestione CRLF normalizzata via `.gitattributes`.
    - **Data Plane (Memoria MCP & Knowledge Graph)**: file isolati per singolo nodo (`memory_mac_m4.jsonl`, `memory_pc_win.jsonl`) con unificazione automatica all'avvio priva di collisioni o race condition.
 2. **Scripting Bivalente Simmetrico**:
-   - `sync.sh` per i nodi macOS (POSIX zsh/bash compatibile con Apple Silicon).
-   - `sync.ps1` per il nodo Windows (PowerShell nativo, gestione automatica delle Junctions `mklink /J` senza privilegi amministratore UAC).
+   - `sync.sh` per i nodi macOS (POSIX zsh/bash compatibile con Apple Silicon, backup atomico preventivo, zero `rm -rf`).
+   - `sync.ps1` per il nodo Windows (PowerShell 7+ nativo, gestione automatica delle Directory Junctions tramite `New-Item -ItemType Junction`, lock inter-processo con Mutex, zero dipendenze da `cmd.exe`).
+
+---
+
+## 5. Risultati del Test Avversariale "Tutti contro Tutti" (Stress Test v3.0.0)
+
+Durante il ciclo di convalida della versione 3.0.0, l'intero team ha simulato un'arena avversariale in cui `polyglot-backend-sage` e `devops-infra-sage` hanno prodotto implementazioni complesse (pipeline multi-tenant e kit infrastrutturale), sottoposte all'attacco incrociato di `security-auditor` e `qa-engineer`.
+
+### A. Rilievi Emersi dal Contraddittorio & Refactoring Applicato
+
+| Modulo | Vulnerabilità / Criticità Rilevata | Agente Segnalatore | Soluzione & Refactoring Applicato |
+| :--- | :--- | :--- | :--- |
+| **Backend** | **BOLA Cross-Tenant nelle Relazioni**: `MemoryRelation` consentiva relazioni tra nodi appartenenti a tenant diversi, portando a data leak nelle query eager-loaded. | `security-auditor` | Aggiunto guard vincolante in `MemoryRelation::booted()` che impone l'uguaglianza rigorosa `sourceNode->tenant_id === targetNode->tenant_id === relation->tenant_id`. |
+| **Backend** | **Gap-Lock Deadlock (InnoDB 1213)**: `SELECT ... FOR UPDATE` su riga non esistente generava un Gap Lock, bloccando gli INSERT concorrenti in deadlock. | `qa-engineer` | Eliminato il Gap Lock: lookup non-bloccante, Record Lock mirato per ID sui record esistenti, o inserimento diretto con cattura del vincolo univoco (MySQL 1062) e retry con backoff/jitter. |
+| **Backend** | **DoS da Ricorsione JSON**: La canonicalizzazione di array profondamente annidati causava rischio di Stack Overflow in PHP. | `security-auditor` | Introdotto controllo di profondità rigido (`MAX_PROPERTIES_DEPTH = 5`) sia nella validazione FormRequest sia nella funzione di hashing. |
+| **Backend** | **Cicli Auto-Referenziali**: Mancanza di vincolo anti-ciclo su `source_node_id === target_node_id`. | `qa-engineer` | Aggiunto vincolo `CHECK (source_node_id != target_node_id)` a livello di migrazione DDL e nel lifecycle model. |
+| **DevOps** | **Command Injection / Quoting in `sync.ps1`**: L'invocazione di `cmd.exe /c mklink` falliva con caratteri `&` o percorsi con spazi. | `security-auditor` | Sostituita con cmdlets nativi di PowerShell 7+ (`New-Item -ItemType Junction` e `HardLink`), eliminando qualsiasi chiamata a `cmd.exe`. |
+| **DevOps** | **Collisione di Concorrenza su Windows**: Esecuzioni simultanee dello script collidavano sulle cartelle di staging. | `qa-engineer` | Introdotto Mutex globale di sincronizzazione (`[System.Threading.Mutex]`) e suffissi con ID di processo (`$PID`). |
+| **DevOps** | **Bypass Nginx `^~ /storage/`**: L'operatore `^~` disabilitava la valutazione di tutte le regex globali, permettendo il download di dump `.sql` o file di log in `/storage/`. | `security-auditor` | Rimosso `^~`, ripristinata la priorità standard e inserite regole annidate di `deny all` per `.sql`, `.log`, `.env*` e dotfiles. |
+| **DevOps** | **Permessi Volume Docker su Non-Root (UID 10001)**: L'utente non privilegiato non poteva scrivere su `storage/` e `bootstrap/cache` montati da host. | `qa-engineer` | Aggiunto `su-exec` all'immagine Alpine, creato volume dedicato `app_bootstrap_cache` e affidata all'entrypoint la sincronizzazione iniziale dei permessi prima del drop privilegi. |
+
+### B. Esito Finale del Test
+A valle del refactoring drop-in, tutti i 4 Quality Gate hanno rilasciato verdetto unanime **`[APPROVATO]`**, certificando l'idoneità del team e delle architetture per ambienti di sviluppo e produzione multi-macchina.
