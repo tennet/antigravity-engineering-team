@@ -1,14 +1,16 @@
 {
   "name": "engineering-team",
-  "displayName": "Engineering Team Subagents (Full Suite)",
+  "displayName": "Engineering Team Subagents (Full Suite v3.0.0)",
   "author": "Manuele Francescon",
-  "description": "Suite avanzata di sub-agenti specializzati per ingegneria del software in Antigravity AI con protocollo dialettico ad anello chiuso (Anti-Sycophancy), quality gate formali e consapevolezza dell'ambiente reale di esecuzione (macOS, Linux, Docker, VM). Include: Project Orchestrator, Software Architect, Security Auditor, QA Engineer, Integration Tester, UI/UX Designer e Documentation Engineer.",
-  "version": "2.1.1",
+  "description": "Suite avanzata di 9 sub-agenti specializzati per ingegneria del software in Antigravity AI con protocollo dialettico ad anello chiuso (Anti-Sycophancy), quality gate formali, saggio polimorfico backend (Laravel/Node/Python) e DevOps cross-platform (macOS/Windows).",
+  "version": "3.0.0",
   "repository": "https://github.com/tennet/antigravity-engineering-team",
   "suggestedPrompts": [
-    "Coordinamento sviluppo completo e contraddittorio con project-orchestrator",
+    "Coordinamento sviluppo completo a 5 fasi con project-orchestrator",
+    "Sviluppo backend Laravel/PHP e ottimizzazione database con polyglot-backend-sage",
+    "Infrastruttura, Docker e script cross-platform con devops-infra-sage",
     "Audit avversariale OWASP e threat modeling con security-auditor",
     "Collaudo di resilienza, boundary testing e failure recovery con qa-engineer",
-    "Design frontend ad alto impatto estetico e bento grid con ui-ux-designer"
+    "Design frontend Bento Grid dark con ui-ux-designer"
   ]
 }

@@ -1,9 +1,9 @@
-# 📘 Guida Tecnica Dettagliata: Architettura & Ecosistema Antigravity
+# 📘 Guida Tecnica Dettagliata: Architettura & Ecosistema Antigravity v3.0.0
 
 > **Autore:** [Manuele Francescon](https://github.com/tennet)  
-> **Versione:** 2.1.1 — Suite Sub-Agenti & Protocollo Dialettico  
+> **Versione:** 3.0.0 — Suite Sub-Agenti a 9 Specialisti, Saggio Polimorfico & DevOps Multi-Node  
 > **Repository Ufficiale:** [tennet/antigravity-engineering-team](https://github.com/tennet/antigravity-engineering-team)  
-> **Ambiente Operativo:** Google Antigravity AI | macOS Apple Silicon / Linux / Docker | Node.js v26.8.1 | Python 3.15.0
+> **Ambiente Operativo:** Google Antigravity AI | macOS Apple Silicon / Windows 11 / Linux | Node.js | Python | PHP 8.4+
 
 ---
 
@@ -13,56 +13,55 @@ L'ambiente separa nettamente il motore di intelligenza artificiale (**Cloud Gemi
 
 ```mermaid
 flowchart TD
-    User["👤 Sviluppatore (Manuele Francescon)"] --> Engine["⚡ Antigravity Engine (Gemini 2.5 Pro / Flash in Cloud)"]
+    User["👤 Sviluppatore (Manuele Francescon)"] --> Engine["⚡ Antigravity Engine (Gemini in Cloud)"]
     
     subgraph GlobalGovernance ["Governance Globale (~/.gemini/config/)"]
         Rules["📜 Regole Universali (AGENTS.md / GEMINI.md)"]
-        Hooks["🪝 Event Hooks (hooks.json)"]
+        Hooks["🪝 Event Hooks (hooks.json Fail-Secure)"]
         MCP["🔌 Protocollo MCP (memory, github)"]
         Skills["🧠 Skills ad Attivazione Rapida"]
     end
     
-    subgraph PluginSuite ["Plugin Ufficiale: tennet/antigravity-engineering-team"]
-        direction TB
+    subgraph PluginSuite ["Plugin: tennet/antigravity-engineering-team (v3.0.0)"]
         Orch["🎯 project-orchestrator (Tech Lead)"]
-        Arch["🏛️ software-architect (System Design & Target OS Awareness)"]
-        Sec["🛡️ security-auditor (Adversarial Threat Modeling & OWASP)"]
-        QA["🧪 qa-engineer (Failure Modes, Deadlocks & CI Testability)"]
-        IT["🔌 integration-tester (E2E & Socket/DB Integration)"]
-        UI["🎨 ui-ux-designer (Modern Frontend, Bento Grid & Dark Theme)"]
+        Arch["🏛️ software-architect (System Design)"]
+        Backend["🧙‍♂️ polyglot-backend-sage (Core & Database Master)"]
+        DevOps["🚀 devops-infra-sage (Hosting, Docker & Multi-Node Sync)"]
+        UI["🎨 ui-ux-designer (Modern Bento Grid UI)"]
+        QA["🧪 qa-engineer (Failure Modes & TDD)"]
+        IT["🔌 integration-tester (E2E & Socket/DB)"]
+        Sec["🛡️ security-auditor (Threat Modeling & Veto)"]
         Doc["📝 documentation-engineer (Docs-as-Code & ADR)"]
     end
     
-    subgraph ExecutionTarget ["Ambiente Target di Esecuzione Reale"]
-        Host["💻 Computer Locale (macOS Apple Silicon)"]
-        Containers["🐳 Container Docker / Podman"]
-        Servers["🖥️ Server Remoti / VM Proxmox / VPS"]
-    end
-    
-    subgraph CloudSync ["Sincronizzazione Remota"]
-        GitHub["☁️ GitHub Remote (github.com/tennet/antigravity-engineering-team)"]
+    subgraph ExecutionTarget ["Ambiente Target Reale (4 Nodi Eterogenei)"]
+        M1["💻 Mac 1 (MacBook Air M4 Apple Silicon)"]
+        M2["💻 Mac 2 (macOS)"]
+        M3["💻 Mac 3 (macOS)"]
+        PC["🖥️ PC Windows (PowerShell / WSL2)"]
     end
     
     Engine --> GlobalGovernance
     GlobalGovernance --> PluginSuite
     PluginSuite --> ExecutionTarget
-    PluginSuite --> GitHub
 ```
 
 ---
 
-## 2. Directory Structure del Plugin
+## 2. Directory Structure del Plugin (v3.0.0)
 
 ```text
 ~/.gemini/config/plugins/engineering-team/
 ├── .gitignore                     # Protezione credenziali e file OS
 ├── LICENSE                        # Licenza MIT (Copyright Manuele Francescon)
-├── README.md                      # Presentazione, disclaimer, matrice ruoli e badge
-├── VADEMECUM.md                   # Prontuario pratico in linguaggio semplice
-├── plugin.json                    # Manifest del plugin (v2.1.1)
-├── agents/                        # I 7 Sub-Agenti Specializzati
+├── README.md                      # Presentazione v3.0.0, disclaimer, matrice ruoli e badge
+├── VADEMECUM.md                   # Prontuario pratico per tutti i 9 agenti
+├── plugin.json                    # Manifest del plugin (v3.0.0)
+├── agents/                        # I 9 Sub-Agenti Specializzati
+│   ├── devops-infra-sage.md       # [NUOVO] DevOps, hosting, Docker e sync multipiattaforma
 │   ├── documentation-engineer.md
 │   ├── integration-tester.md
+│   ├── polyglot-backend-sage.md   # [NUOVO] Saggio polimorfico (Laravel/Node/Python/MySQL)
 │   ├── project-orchestrator.md
 │   ├── qa-engineer.md
 │   ├── security-auditor.md
@@ -74,61 +73,26 @@ flowchart TD
 
 ---
 
-## 3. Il Ciclo di Contraddittorio (Anti-Sycophancy)
+## 3. Il Protocollo Deterministico del Sub-Agente Polimorfico
 
-Nei sistemi multi-agente convenzionali, gli assistenti tendono ad approvare acriticamente il lavoro precedente (*sycophancy*).  
-La suite **`antigravity-engineering-team`** introduce una regola di condotta avversariale obbligatoria:
+`polyglot-backend-sage` non è un generico assistente, ma adotta il **Deterministic Manifest Detection Protocol**:
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Dev as Manuele (Utente)
-    participant PO as Project Orchestrator
-    participant SA as Software Architect
-    participant SEC as Security Auditor
-    participant QA as QA Engineer
-
-    Dev->>PO: Richiesta architettura o feature complessa
-    PO->>SA: Incarico di progettazione (Design v1.0)
-    SA-->>PO: Consegna schema, API contracts e budget risorse
-    
-    par Verifica Incrociata Avversariale
-        PO->>SEC: Threat modeling OWASP, SSRF, injection e memory forensics
-        PO->>QA: Failure modes, crash recovery (SIGKILL/OOM), deadlocks e testabilità CI
-    end
-    
-    alt Riscontrate criticità bloccanti
-        SEC-->>PO: Verdetto: [RESPINTO] + Matrice SEC-xx
-        QA-->>PO: Verdetto: [RESPINTO] + Matrice TC-xx
-        PO->>SA: Ingiunge refactoring obbligatorio con drop-in remediation
-        SA-->>PO: Consegna Revisione Architetturale v1.1 Refactored
-    end
-    
-    SEC-->>PO: Verdetto: [APPROVATO]
-    QA-->>PO: Verdetto: [APPROVATO]
-    PO-->>Dev: Soluzione validata e pronta per l'implementazione
-```
-
----
-
-## 4. Matrice dei Quality Gate Formali
-
-Tutti i collaudatori e controllori di sicurezza operano con esiti vincolanti:
-
-| Verdetto | Condizione | Impatto sul Flusso |
+| Stack Rilevato | Manifest Trigger | Specializzazione Applicata |
 | :--- | :--- | :--- |
-| **`[APPROVATO]`** | Zero vulnerabilità critiche o alte; testabilità e resilienza garantite al 100%. | Autorizza l'avanzamento allo sviluppo o al rilascio su Git. |
-| **`[APPROVATO CON RISERVA]`** | Solo rilievi minori o di debito differibile (severità Low/Medium non bloccante). | Richiede tracking formale nei task, ma non blocca l'implementazione. |
-| **`[RESPINTO]`** | Rilevata almeno una vulnerabilità Critical/High, rischio crashloop, leak di risorse o assenza di mock per CI. | **Blocco totale del rilascio**: il compito torna all'Architetto/Sviluppatore per la revisione. |
+| **LARAVEL_MODERN** | `composer.json` con `laravel/framework` | PHP 8.4+, Laravel 11/12 lean skeleton, Action pattern, prevenzione $N+1$ con `Model::with()`, indici compositi MySQL/SQLite, `DB::transaction()`. |
+| **PHP_VANILLA** | `composer.json` senza Laravel | PHP 8.4+, architettura PSR-4, PSR-7/15, typed constants, property hooks. |
+| **NODE_TYPESCRIPT** | `package.json` + `tsconfig.json` | Strict TypeScript, validazione runtime Zod, Fastify/Express/Nest, async/await privo di unhandled rejections. |
+| **PYTHON_MODERN** | `pyproject.toml` / `requirements.txt` | Python 3.12+, FastAPI, Pydantic v2, SQLAlchemy 2.0 con type hints completi. |
 
 ---
 
-## 5. Manutenzione e Sviluppo Continuo
-Per aggiornare il plugin o sincronizzare modifiche:
-```bash
-cd ~/.gemini/config/plugins/engineering-team
-git status
-git add .
-git commit -m "feat(scope): descrizione della modifica"
-git push origin main
-```
+## 4. Architettura di Sincronizzazione Multi-Nodo (3 Mac + 1 PC)
+
+Progettata da `devops-infra-sage` per evitare i fallimenti dello storage cloud consumer non strutturato:
+
+1. **Separazione Netta**:
+   - **Control Plane (Configurazioni, Skills, Agenti)**: sincronizzato tramite il repository Git `tennet/antigravity-engineering-team` con gestione CRLF normalizzata via `.gitattributes`.
+   - **Data Plane (Memoria MCP & Knowledge Graph)**: file isolati per singolo nodo (`memory_mac_m4.jsonl`, `memory_pc_win.jsonl`) con unificazione automatica all'avvio priva di collisioni o race condition.
+2. **Scripting Bivalente Simmetrico**:
+   - `sync.sh` per i nodi macOS (POSIX zsh/bash compatibile con Apple Silicon).
+   - `sync.ps1` per il nodo Windows (PowerShell nativo, gestione automatica delle Junctions `mklink /J` senza privilegi amministratore UAC).
