@@ -35,19 +35,21 @@ A differenza dei normali assistenti multi-agente che tendono al compiacimento pa
 
 ---
 
-## 👥 La Squadra dei 9 Specialisti
+## 👥 La Squadra dei 9 Specialisti (Nomi Canonici & Alias Rapidi)
 
-| Agente | Ruolo | Responsabilità Chiave |
-| :--- | :--- | :--- |
-| **[`project-orchestrator`](agents/project-orchestrator.md)** | **Tech Lead & Coordinatore** | Governa il ciclo a 5 fasi, assegna i task secondo la matrice RACI, coordina il contraddittorio ed esige semafori verdi prima del rilascio. |
-| **[`software-architect`](agents/software-architect.md)** | **System Architect** | Progetta moduli disaccoppiati (SRP), contratti API tipizzati (OpenAPI, RFC 7807), admission control e vincoli di memoria fisica (macOS vs Linux vs Windows). |
-| **[`polyglot-backend-sage`](agents/polyglot-backend-sage.md)** | **Saggio Backend & DB Master** | Polimorfico (Laravel/Node/Python). Specializzazione verticale su Laravel 11/12, PHP 8.4+ ed Eloquent/MySQL: query senza N+1, transazioni ACID, indici compositi e Action pattern. |
-| **[`ui-ux-designer`](agents/ui-ux-designer.md)** | **Senior Frontend Design Engineer** | Crea layout moderni stile Linear/Stripe/Vercel: bento grid asimmetriche, dark mode profonda (`#09090b`), glassmorphism, micro-interazioni fluide con Tailwind, shadcn/ui e Framer Motion. |
-| **[`devops-infra-sage`](agents/devops-infra-sage.md)** | **DevOps & Infrastructure Sage** | Container Docker multi-arch (`buildx`), isolamento webroot, hardening Nginx/Apache, script bivalenti simmetrici Bash/PowerShell per coordinare 3 Mac e 1 PC Windows. |
-| **[`qa-engineer`](agents/qa-engineer.md)** | **Lead QA & Reliability Engineer** | Analisi dei failure modes su crash/OOM (Reaper pattern, Dead Letter Queue, PEL deadlock), boundary testing (0 byte, off-by-one) e testabilità in CI/CD. |
-| **[`integration-tester`](agents/integration-tester.md)** | **Collaudatore E2E & Rete** | Valida il dialogo reale tra Frontend, API, Redis/RabbitMQ, Database e Filesystem, simulando latenze di rete e testando la degradazione controllata. |
-| **[`security-auditor`](agents/security-auditor.md)** | **Adversarial Security Engineer** | Threat modeling OWASP Top 10 Web e LLM, scansione SSRF con socket pinning, prevenzione indirect prompt injection, token smuggling e protezione credenziali. Possiede **Diritto di Veto**. |
-| **[`documentation-engineer`](agents/documentation-engineer.md)** | **Ingegnere Documentale** | Custode del principio Docs-as-Code (zero invenzioni), redige Registri delle Decisioni Architetturali (ADR), changelog strutturati e guide operative chiare in italiano. |
+Ciascuno specialista può essere richiamato in chat indifferentemente con il suo **nome canonico formale** oppure con il suo **alias rapido** ispirato a una figura celebre della tecnologia moderna:
+
+| Agente Canonico | Alias Rapido | Ruolo Specializzato | Responsabilità Chiave |
+| :--- | :---: | :--- | :--- |
+| **[`project-orchestrator`](agents/project-orchestrator.md)** | **[`@elon`](agents/elon.md)** | **Tech Lead & Coordinatore** | Governa il ciclo a 5 fasi, assegna i task secondo la matrice RACI, coordina il contraddittorio ed esige semafori verdi prima del rilascio. |
+| **[`software-architect`](agents/software-architect.md)** | **[`@werner`](agents/werner.md)** | **System Architect** | Progetta moduli disaccoppiati (SRP), contratti API tipizzati (OpenAPI, RFC 7807), admission control e vincoli di memoria fisica (macOS vs Linux vs Windows). |
+| **[`polyglot-backend-sage`](agents/polyglot-backend-sage.md)** | **[`@taylor`](agents/taylor.md)** | **Saggio Backend & DB Master** | Polimorfico (Laravel/Node/Python). Specializzazione verticale su Laravel 11/12, PHP 8.4+ ed Eloquent/MySQL: query senza N+1, transazioni ACID, indici compositi e Action pattern. |
+| **[`ui-ux-designer`](agents/ui-ux-designer.md)** | **[`@steve`](agents/steve.md)** | **Senior Frontend Design Engineer** | Crea layout moderni stile Linear/Stripe/Vercel: bento grid asimmetriche, dark mode profonda (`#09090b`), glassmorphism, micro-interazioni fluide con Tailwind, shadcn/ui e Framer Motion. |
+| **[`devops-infra-sage`](agents/devops-infra-sage.md)** | **[`@linus`](agents/linus.md)** | **DevOps & Infrastructure Sage** | Container Docker multi-arch (`buildx`), isolamento webroot, hardening Nginx/Apache, script bivalenti simmetrici Bash/PowerShell per coordinare 3 Mac e 1 PC Windows. |
+| **[`qa-engineer`](agents/qa-engineer.md)** | **[`@carmack`](agents/carmack.md)** | **Lead QA & Reliability Engineer** | Analisi dei failure modes su crash/OOM (Reaper pattern, Dead Letter Queue, PEL deadlock), boundary testing (0 byte, off-by-one) e testabilità in CI/CD. |
+| **[`integration-tester`](agents/integration-tester.md)** | **[`@rauch`](agents/rauch.md)** | **Collaudatore E2E & Rete** | Valida il dialogo reale tra Frontend, API, Redis/RabbitMQ, Database e Filesystem, simulando latenze di rete e testando la degradazione controllata. |
+| **[`security-auditor`](agents/security-auditor.md)** | **[`@geohot`](agents/geohot.md)** | **Adversarial Security Engineer** | Threat modeling OWASP Top 10 Web e LLM, scansione SSRF con socket pinning, prevenzione indirect prompt injection, token smuggling e protezione credenziali. Possiede **Diritto di Veto**. |
+| **[`documentation-engineer`](agents/documentation-engineer.md)** | **[`@guido`](agents/guido.md)** | **Ingegnere Documentale** | Custode del principio Docs-as-Code (zero invenzioni), redige Registri delle Decisioni Architetturali (ADR), changelog strutturati e guide operative chiare in italiano. |
 
 ---
 

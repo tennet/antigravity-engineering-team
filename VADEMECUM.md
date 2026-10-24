@@ -23,21 +23,25 @@ Invece di parlare con una sola IA generica, immagina di avere:
 
 ---
 
-## 1. La tua Squadra di 9 Esperti Virtuali
+## 1. La tua Squadra di 9 Esperti Virtuali (Nomi Canonici & Nuovi Alias Rapidi)
 
-Puoi chiamare ciascun collaboratore semplicemente nominandolo nel messaggio:
+Puoi chiamare ciascun collaboratore usando sia il suo **nome canonico formale**, sia il suo **nuovo alias rapido** ispirato ai più grandi protagonisti della tecnologia contemporanea:
 
-| Collaboratore | Chi è e a cosa serve | La frase esatta da scrivere in chat per usarlo |
-| :--- | :--- | :--- |
-| 🎯 **Il Coordinatore** (`project-orchestrator`) | È il tuo Tech Lead. Mette in ordine le idee, governa il contraddittorio tra gli agenti e controlla che tutti i collaudi siano superati prima della consegna. | *"Chiedi al coordinatore di organizzare il lavoro per creare [tua idea]"* |
-| 🏛️ **L'Architetto** (`software-architect`) | Progetta la struttura tecnica, crea diagrammi chiari, sceglie database e contratti dati tenendo conto del tuo sistema operativo reale. | *"Chiedi all'architetto di preparare il piano tecnico per questa funzione"* |
-| 🧙‍♂️ **Il Saggio del Backend** (`polyglot-backend-sage`) | Il "braccio esperto" server-side. Riconosce da solo lo stack (Laravel/PHP, Node/TS, Python) e scrive codice ad alte prestazioni, eliminando query lente ($N+1$) e curando le transazioni del database. | *"Chiedi al backend-sage di implementare le API e la logica del database per questo modulo"* |
-| 🎨 **Il Grafico** (`ui-ux-designer`) | Evita schermate noiose. Disegna pagine web moderne (stile Linear/Stripe), con schede Bento, sfondi scuri eleganti ed effetti di luce. | *"Chiedi al designer di rifare la schermata rendendola moderna e accattivante"* |
-| 🚀 **Il Sistemista & DevOps** (`devops-infra-sage`) | Gestisce container Docker, server web, sicurezza della cartella public, deployment e crea gli script simmetrici per far dialogare Mac e PC Windows. | *"Chiedi al devops-sage di configurare Docker o preparare lo script di sincronizzazione"* |
-| 🧪 **Il Collaudatore** (`qa-engineer`) | Scova i singoli bug, verifica cosa accade in caso di crash o interruzione improvvisa e protegge la memoria da blocchi. | *"Chiedi al collaudatore di trovare e isolare l'errore in questo codice"* |
-| 🔌 **Il Tester d'Integrazione** (`integration-tester`) | Controlla che le diverse parti del sistema (sito, database, API e server) parlino davvero tra loro senza blocchi o errori di rete. | *"Chiedi all'integration-tester di verificare il passaggio dati da inizio a fine"* |
-| 🛡️ **La Guardia di Sicurezza** (`security-auditor`) | Cerca falle con l'occhio di un attaccante (vulnerabilità OWASP, chiavi segrete esposte, iniezioni nei prompt e abusi di rete). | *"Fai fare un controllo di sicurezza avversariale prima di salvare o pubblicare"* |
-| 📝 **Il Documentatore** (`documentation-engineer`) | Mantiene sempre aggiornati il README, le spiegazioni e i registri delle decisioni, scrivendo solo ciò che è stato davvero verificato. | *"Fai aggiornare la documentazione al documentatore"* |
+| Alias Rapido | Collaboratore Canonico | Chi è e a cosa serve | Come richiamarlo al volo in chat |
+| :---: | :--- | :--- | :--- |
+| **`@elon`** | 🎯 **Il Coordinatore** (`project-orchestrator`) | Il tuo Tech Lead. Mette in ordine le idee, taglia la burocrazia, governa il contraddittorio e pretende semafori verdi prima del rilascio. | `@elon organizza lo sviluppo di [tua idea]` |
+| **`@werner`** | 🏛️ **L'Architetto** (`software-architect`) | Il CTO del Cloud. Progetta l'architettura tecnica, contratti API tipizzati, flussi di dati e resilienza (*"Everything fails all the time"*). | `@werner disegna l'architettura per questa funzione` |
+| **`@taylor`** | 🧙‍♂️ **Il Saggio del Backend** (`polyglot-backend-sage`) | Il maestro di Laravel, PHP 8.4 e MySQL. Scrive Action atomiche, elimina query lente ($N+1$) e garantisce zero Gap Lock deadlocks. | `@taylor implementa la logica backend e ottimizza le query` |
+| **`@linus`** | 🚀 **Il Sistemista & DevOps** (`devops-infra-sage`) | Il padrone dei sistemi. Governa container Docker multi-arch, webroot hardening e script bivalenti simmetrici (macOS e Windows 11). | `@linus prepara docker-compose e gli script di deploy` |
+| **`@steve`** | 🎨 **Il Grafico** (`ui-ux-designer`) | L'esteta del frontend. Disegna layout moderni in stile Linear/Vercel: Bento Grid, dark theme zinc profondo e micro-interazioni fluide. | `@steve crea un'interfaccia bento grid per questa schermata` |
+| **`@carmack`** | 🧪 **Il Collaudatore** (`qa-engineer`) | La leggenda dell'affidabilità. TDD rigoroso, scova bug estremi, boundary testing su valori speciali (`NaN`/`INF`) e anti-crash. | `@carmack esegui i test boundary e cerca deadlock` |
+| **`@rauch`** | 🔌 **Il Tester d'Integrazione** (`integration-tester`) | Il connettore globale. Verifica che API, database, frontend e code dialoghino davvero, applicando Circuit Breakers e testando la latenza. | `@rauch testa il flusso end-to-end simulando latenza di rete` |
+| **`@geohot`** | 🛡️ **La Guardia di Sicurezza** (`security-auditor`) | L'hacker avversariale spietato. Scova falle BOLA/IDOR, command injection, threat modeling STRIDE e possiede **Diritto di Veto**. | `@geohot esegui un audit avversariale su questo codice` |
+| **`@guido`** | 📝 **Il Documentatore** (`documentation-engineer`) | Il custode della chiarezza (*"Readability counts"*). Scrive documentazione Diátaxis e registri ADR riportando solo fatti verificati. | `@guido aggiorna la guida tecnica e il changelog` |
+
+> [!TIP]
+> **Compatibilità Totale a Doppio Senso:**  
+> Puoi usare indifferentemente `@elon` o `@project-orchestrator`, `@taylor` o `@polyglot-backend-sage`, `@linus` o `@devops-infra-sage`. Entrambe le sintassi puntano al medesimo cervello e alle stesse competenze!
 
 ---
 
