@@ -197,6 +197,12 @@ main() {
         safe_symlink "${REPO_ROOT}/.env.example" "${GEMINI_HOME}/env.master.template"
     fi
 
+    # 3. Consolidate shared multi-node memory from Google Drive
+    if [ -f "${REPO_ROOT}/hooks/unify_memory.py" ]; then
+        log_audit "Stage 3: Consolidating multi-node memory from Google Drive..."
+        "${REPO_ROOT}/hooks/run_hook.sh" "${REPO_ROOT}/hooks/unify_memory.py" || true
+    fi
+
     log_ok "Sync operation completed successfully without data loss."
 }
 

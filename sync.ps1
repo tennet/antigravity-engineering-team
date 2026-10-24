@@ -251,6 +251,18 @@ try {
         New-SafeFileLink -SourcePath $EnvSource -LinkPath $EnvLink
     }
 
+    # 3. Consolidate shared multi-node memory from Google Drive
+    $UnifyScript = Join-Path -Path $HooksSource -ChildPath "unify_memory.py"
+    if (Test-Path -LiteralPath $UnifyScript) {
+        Write-LogAudit "Stage 3: Consolidating multi-node memory from Google Drive..."
+        try {
+            $RunHook = Join-Path -Path $HooksSource -ChildPath "run_hook.ps1"
+            & $RunHook $UnifyScript
+        } catch {
+            Write-LogWarn "Memory consolidation encountered a non-fatal warning: $_"
+        }
+    }
+
     Write-LogOk "Sync operation completed successfully on Windows without privilege elevation."
 
 } finally {
