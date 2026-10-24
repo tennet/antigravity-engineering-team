@@ -31,6 +31,7 @@ A differenza dei normali assistenti multi-agente che tendono al compiacimento pa
 ## 🧭 Guide & Documentazione Pratica
 - 📖 **[VADEMECUM.md](VADEMECUM.md)**: **Guida pratica in linguaggio semplice** con il prontuario delle frasi esatte da scrivere in chat per ciascuno dei 9 agenti e i comandi quotidiani.
 - 📘 **[docs/GUIDA_TECNICA_DETTAGLIATA.md](docs/GUIDA_TECNICA_DETTAGLIATA.md)**: **Specifiche architetturali approfondite**, diagrammi di flusso dei contratti e matrice dei quality gate.
+- 📚 **[references/INDEX.md](references/INDEX.md)**: **Il Tomo della Saggezza Ingegneristica** — Raccolta dei 9 volumi canonici estratti dalla letteratura fondamentale mondiale (Kleppmann, Petrov, Google SRE, Zalewski, Feathers, Beck).
 
 ---
 
