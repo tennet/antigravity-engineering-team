@@ -6,7 +6,7 @@
   "version": "3.0.0",
   "repository": "https://github.com/tennet/antigravity-engineering-team",
   "suggestedPrompts": [
-    "@elon coordina lo sviluppo completo a 5 fasi per un nuovo modulo",
+    "@turing coordina lo sviluppo completo a 5 fasi per un nuovo modulo",
     "@taylor sviluppa la logica backend Laravel/PHP e ottimizza le query",
     "@linus configura docker-compose multi-arch e gli script di deploy",
     "@steve progetta l'interfaccia Bento Grid dark moderna",

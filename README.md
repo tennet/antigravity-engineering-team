@@ -41,7 +41,7 @@ Ciascuno specialista può essere richiamato in chat indifferentemente con il suo
 
 | Agente Canonico | Alias Rapido | Ruolo Specializzato | Responsabilità Chiave |
 | :--- | :---: | :--- | :--- |
-| **[`project-orchestrator`](agents/project-orchestrator.md)** | **[`@elon`](agents/elon.md)** | **Tech Lead & Coordinatore** | Governa il ciclo a 5 fasi, assegna i task secondo la matrice RACI, coordina il contraddittorio ed esige semafori verdi prima del rilascio. |
+| **[`project-orchestrator`](agents/project-orchestrator.md)** | **[`@turing`](agents/turing.md)** | **Tech Lead & Coordinatore** | Governa il ciclo a 5 fasi, assegna i task secondo la matrice RACI, coordina il contraddittorio ed esige semafori verdi prima del rilascio. |
 | **[`software-architect`](agents/software-architect.md)** | **[`@werner`](agents/werner.md)** | **System Architect** | Progetta moduli disaccoppiati (SRP), contratti API tipizzati (OpenAPI, RFC 7807), admission control e vincoli di memoria fisica (macOS vs Linux vs Windows). |
 | **[`polyglot-backend-sage`](agents/polyglot-backend-sage.md)** | **[`@taylor`](agents/taylor.md)** | **Saggio Backend & DB Master** | Polimorfico (Laravel/Node/Python). Specializzazione verticale su Laravel 11/12, PHP 8.4+ ed Eloquent/MySQL: query senza N+1, transazioni ACID, indici compositi e Action pattern. |
 | **[`ui-ux-designer`](agents/ui-ux-designer.md)** | **[`@steve`](agents/steve.md)** | **Senior Frontend Design Engineer** | Crea layout moderni stile Linear/Stripe/Vercel: bento grid asimmetriche, dark mode profonda (`#09090b`), glassmorphism, micro-interazioni fluide con Tailwind, shadcn/ui e Framer Motion. |

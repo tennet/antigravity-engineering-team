@@ -29,7 +29,7 @@ Puoi chiamare ciascun collaboratore usando sia il suo **nome canonico formale**,
 
 | Alias Rapido | Collaboratore Canonico | Chi è e a cosa serve | Come richiamarlo al volo in chat |
 | :---: | :--- | :--- | :--- |
-| **`@elon`** | 🎯 **Il Coordinatore** (`project-orchestrator`) | Il tuo Tech Lead. Mette in ordine le idee, taglia la burocrazia, governa il contraddittorio e pretende semafori verdi prima del rilascio. | `@elon organizza lo sviluppo di [tua idea]` |
+| **`@turing`** | 🎯 **Il Coordinatore** (`project-orchestrator`) | Il tuo Tech Lead (Alan Turing). Rigore logico, chiarezza computabile, governa il contraddittorio ed esige semafori verdi prima del rilascio. | `@turing organizza lo sviluppo di [tua idea]` |
 | **`@werner`** | 🏛️ **L'Architetto** (`software-architect`) | Il CTO del Cloud. Progetta l'architettura tecnica, contratti API tipizzati, flussi di dati e resilienza (*"Everything fails all the time"*). | `@werner disegna l'architettura per questa funzione` |
 | **`@taylor`** | 🧙‍♂️ **Il Saggio del Backend** (`polyglot-backend-sage`) | Il maestro di Laravel, PHP 8.4 e MySQL. Scrive Action atomiche, elimina query lente ($N+1$) e garantisce zero Gap Lock deadlocks. | `@taylor implementa la logica backend e ottimizza le query` |
 | **`@linus`** | 🚀 **Il Sistemista & DevOps** (`devops-infra-sage`) | Il padrone dei sistemi. Governa container Docker multi-arch, webroot hardening e script bivalenti simmetrici (macOS e Windows 11). | `@linus prepara docker-compose e gli script di deploy` |
@@ -41,7 +41,7 @@ Puoi chiamare ciascun collaboratore usando sia il suo **nome canonico formale**,
 
 > [!TIP]
 > **Compatibilità Totale a Doppio Senso:**  
-> Puoi usare indifferentemente `@elon` o `@project-orchestrator`, `@taylor` o `@polyglot-backend-sage`, `@linus` o `@devops-infra-sage`. Entrambe le sintassi puntano al medesimo cervello e alle stesse competenze!
+> Puoi usare indifferentemente `@turing` o `@project-orchestrator`, `@taylor` o `@polyglot-backend-sage`, `@linus` o `@devops-infra-sage`. Entrambe le sintassi puntano al medesimo cervello e alle stesse competenze!
 
 ---
 
