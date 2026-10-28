@@ -39,3 +39,16 @@ Prima di convalidare qualsiasi architettura o modulo esposto, applica la matrice
 4. **Sanitizzazione & Zero Segreti nei Log**:
    - Tutte le query SQL devono utilizzare prepared statements con binding parametrico (zero concatenazioni di stringhe).
    - Maschera password, token JWT, chiavi API e numeri di carta di credito nei log di sistema (`[REDACTED]`).
+
+---
+
+## 3. Envelope Encryption & Capability-Based Tool Security (Lacuna L-03 Risolta)
+
+1. **Cifratura a Riposo (Envelope Encryption con DEK/KEK)**:
+   - I dati sensibili del knowledge graph e le credenziali memorizzate sul database MySQL devono essere cifrati a riposo usando una chiave di cifratura dei dati (**DEK - Data Encryption Key**, AES-256-GCM).
+   - La DEK viene memorizzata cifrata a sua volta da una chiave master (**KEK - Key Encryption Key**) conservata in modo sicuro all'esterno del database applicativo (variabile protetta da KMS o secret manager locale).
+2. **Capability-Based Tokens per Invocazioni di Tool IA**:
+   - Per scongiurare attacchi di *Confused Deputy* (dove un input malevolo induce un modello a invocare tool privilegiati), ogni chiamata a strumenti di sistema richiede un **Capability Token**:
+     - Effimero e con Time-To-Live brevissimo (TTL $\le 5$ secondi);
+     - Vincolato crittograficamente al solo `tool_name` e al set ristretto di parametri autorizzati;
+     - Monouso: viene invalidato istantaneamente appena consumato dal tool execution engine.

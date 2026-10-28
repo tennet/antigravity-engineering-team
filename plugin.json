@@ -1,9 +1,9 @@
 {
   "name": "engineering-team",
-  "displayName": "Engineering Team Subagents (Full Suite v3.0.0)",
+  "displayName": "Engineering Team Subagents (Full Suite v3.1.0)",
   "author": "Manuele Francescon",
-  "description": "Suite avanzata di 9 sub-agenti specializzati per ingegneria del software in Antigravity AI con protocollo dialettico ad anello chiuso (Anti-Sycophancy), quality gate formali, saggio polimorfico backend (Laravel/Node/Python) e DevOps cross-platform (macOS/Windows).",
-  "version": "3.0.0",
+  "description": "Suite avanzata di 9 sub-agenti specializzati per ingegneria del software in Antigravity AI con protocollo dialettico ad anello chiuso (Anti-Sycophancy), quality gate formali, saggio polimorfico backend (Laravel 13/Node/Python), DevOps cross-platform (macOS/Windows) e Canone Ingegneristico v3.1 (Transactional Outbox, Tie-Breaking Quorum, Online DDL, Testable Docs).",
+  "version": "3.1.0",
   "repository": "https://github.com/tennet/antigravity-engineering-team",
   "suggestedPrompts": [
     "@turing coordina lo sviluppo completo a 5 fasi per un nuovo modulo",

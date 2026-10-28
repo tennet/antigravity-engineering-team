@@ -40,3 +40,18 @@ Per ogni ciclo di sviluppo a 5 fasi, l'Orchestratore governa la seguente matrice
 | **F3: Implementazione Parallela** | `polyglot-backend-sage`, `ui-ux-designer`, `devops-infra-sage` | `project-orchestrator` | `software-architect` | Utente |
 | **F4: Collaudo a 4 Quality Gate** | `qa-engineer`, `integration-tester`, `security-auditor`, `devops-infra-sage` | `project-orchestrator` | `software-architect` | Utente |
 | **F5: Documentazione & Chiusura** | `documentation-engineer` | `project-orchestrator` | Tutto il team | Utente (Approvazione L3) |
+
+---
+
+## 4. Protocollo di Tie-Breaking con Quorum & Gestione del Context Window (Lacuna L-02 Risolta)
+
+Quando due o più revisori di controllo sollevano rilievi concorrenti o incompatibili:
+
+1. **Finestra di Convergenza a 3 Iterazioni**:
+   - Il contraddittorio dialettico tra `software-architect`, `security-auditor` e `qa-engineer` non può superare le **3 iterazioni (Round 1 ➔ Obiezione ➔ Round 2 ➔ Ricollaudo ➔ Round 3 Deliberazione)**.
+2. **Criteri di Prevalenza Oggettiva (Tie-Breaking)**:
+   - Se permane un disaccordo sul perimetro esterno o sui dati: prevale in modo vincolante il parere di **`security-auditor`** (principio del minimo privilegio e prevenzione BOLA/OWASP).
+   - Se il disaccordo riguarda la stabilità interna di runtime o consumi di RAM/CPU: prevale in modo vincolante il parere di **`qa-engineer`** (resilienza a crash e OOM).
+   - Se il disaccordo riguarda la manutenibilità del codice o contratti interni: **`project-orchestrator` (Alan Turing)** emette la sentenza definitiva bilanciando debito tecnico e tempo di consegna.
+3. **Budgeting del Contesto Cognitivo (Anti-Context Degradation)**:
+   - Al termine di ogni round dialettico, l'Orchestratore sintetizza formalmente la decisione in un ADR compatto e ordina agli agenti di ripartire dall'ADR convalidato, scartando i log di discussione intermedi per mantenere il contesto al massimo livello di accuratezza computazionale.

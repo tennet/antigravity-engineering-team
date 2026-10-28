@@ -48,3 +48,16 @@ quadrantChart
      - `Changed`: Modifiche al comportamento esistente.
      - `Fixed`: Risoluzione di bug e difetti.
      - `Security`: Vulnerabilità sanate.
+
+---
+
+## 3. Testable Documentation & Deprecation Lifecycle (Lacuna L-04 Risolta)
+
+1. **Test Automatizzato della Documentazione (Doctest / Doc Linter)**:
+   - Ogni comando da terminale (`bash`, `zsh`, `powershell`), query SQL o snippet di codice riportato nella documentazione deve essere sottoposto a verifica automatizzata di sintassi ed eseguibilità prima del rilascio.
+   - È vietato includere comandi con opzioni o flag non supportati dalle versioni installate (es. flag MySQL 8.4 deprecati o percorsi obsoleti).
+2. **Ciclo di Vita delle Funzionalità Dismesse (Deprecation Lifecycle)**:
+   - Prima di rimuovere qualsiasi endpoint, classe o comando, adotta il ciclo formale a 3 stadi:
+     1. `DEPRECATED`: L'elemento continua a funzionare ma emette un log di avviso formale e riporta l'alert `[!WARNING]` nella documentazione indicando l'alternativa raccomandata e la data di sunset.
+     2. `SUNSET`: L'elemento rifiuta nuove invocazioni restituendo errore controllato (`HTTP 410 Gone` o eccezione dedicata).
+     3. `REMOVED`: Rimozione fisica del codice dal repository con nota esplicita nel `CHANGELOG.md`.
